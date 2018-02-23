@@ -27,7 +27,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 
 		<dependency>
@@ -35,6 +43,28 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--junit  test -->
+		<!--<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>RELEASE</version>
+		</dependency>-->
+		<dependency>  <!-- test 的范围区间只有 测试代码中有效 代码编译不会加入-->
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<!--<scope>test</scope>   &lt;!&ndash; 默认就是compile 测试只有在测试代码中编译使用  &ndash;&gt;-->
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.12</version>
+		</dependency>
+		<!--<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+		</dependency>-->
 	</dependencies>
 
 	<build>
@@ -42,9 +72,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.ClientControl.ClientControlApplication</mainClass>
-				</configuration>
+				<!--<configuration>
+					&lt;!&ndash;过滤掉不希望包含在jar中的文件 &ndash;&gt;
+					<excludes>
+						<exclude>${project.basedir}/src/java/com.alibaba.idst.visualcomputing.imagesearchservice.web.form/*</exclude>
+					</excludes>
+					<mainClass>com.xbb.ClientControlApplication</mainClass>
+				</configuration>-->
 				<version>1.5.8.RELEASE</version>
 				<executions>
 					<execution>

@@ -1,4 +1,4 @@
-package com.ClientControl.Bean;
+package com.xbb.Bean;
 
 /**
  * Created by VULCAN on 2017/11/1.

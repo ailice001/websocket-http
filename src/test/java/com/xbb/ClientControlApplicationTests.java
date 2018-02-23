@@ -1,4 +1,4 @@
-package com.ClientControl;
+package com.xbb;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

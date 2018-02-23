@@ -1,21 +1,35 @@
-package com.ClientControl.Control;
+package com.xbb.others;
 
-import com.ClientControl.Bean.MyProcess;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.xbb.Bean.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Map;
 
 /**
  * Created by VULCAN on 2017/10/31.
  */
 @RestController
 public class ClientControl {
+
+
+    @RequestMapping("/helloWorld")
+    public String Hello(){
+      return "hello world";
+    }
+
+    @RequestMapping(path = "/test/post",method = {RequestMethod.GET,RequestMethod.POST})
+    public Result postHello(Result result){
+        System.out.println("in post method!");
+        result.setCode(0);
+        result.setMessage("load success!");
+        System.out.println(result.getName());
+        return result;
+    }
+
+
     static  String  root =  "D:\\jars\\DemoB\\Bin\\";
     @RequestMapping("/OnLineServerStart")
     public String OnLineServerStart() {
